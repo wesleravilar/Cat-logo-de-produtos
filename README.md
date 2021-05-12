@@ -1,2 +1,2 @@
-# Cat-logo-de-produtos
+# Catalogo-de-produtos
 desafio Compasso UOL

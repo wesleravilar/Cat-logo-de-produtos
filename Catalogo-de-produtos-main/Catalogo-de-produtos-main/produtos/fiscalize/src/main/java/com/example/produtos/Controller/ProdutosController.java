@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.Optional;
 
 @RestController
-@RequestMapping ("/produtos")
+@RequestMapping ("/products")
 public class ProdutosController {
     @Autowired
     private ProdutosService service;
@@ -61,11 +61,10 @@ private URI getUri (Integer id){
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> delete(@PathVariable("id") Integer id) {
-       boolean ok = service.delete((id));
+       service.delete((id));
 
-        return ok ?
-               ResponseEntity.ok().build() :
-                ResponseEntity.notFound().build();
+        return  ResponseEntity.ok().build();
+
     }
 
 

@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -44,12 +43,9 @@ public class ProdutosService {
         }
     }
 
-    public boolean delete(Integer id){
-      if ( getProdutosById(id).isPresent()){
+    public void delete(Integer id){
             rep.deleteById(id);
-            return true;
-        }
-        return false;
+
     }
     public Iterable<Produtos> search (Long min_price, Long max_price, String q){
         return rep.findAllBetweenPrices(min_price,max_price,q);
